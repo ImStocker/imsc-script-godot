@@ -5,4 +5,5 @@ export_presets.cfg
 export_credentials.cfg
 build/
 *.log
+*.tmp
 .DS_Store

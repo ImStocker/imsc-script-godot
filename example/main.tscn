@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://dyt0bmnh108mh"]
+
+[ext_resource type="Script" uid="uid://eepyq3jb2nc8" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://b6i4l1ta7hryi" path="res://images/bg_hall.png" id="2_0xm2m"]
+
+[node name="Node2D" type="Node2D" unique_id=1838208129]
+script = ExtResource("1_ig7tw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=222494411]
+
+[node name="UI" type="Control" parent="CanvasLayer" unique_id=1922785507]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bg" type="ColorRect" parent="CanvasLayer/UI" unique_id=615255414]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.65
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.1, 0.1, 0.15, 0.9)
+
+[node name="SpeakerLabel" type="Label" parent="CanvasLayer/UI" unique_id=367572082]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.68
+anchor_right = 0.95
+anchor_bottom = 0.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.6, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 16
+
+[node name="DialogueLabel" type="RichTextLabel" parent="CanvasLayer/UI" unique_id=716803296]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.75
+anchor_right = 0.95
+anchor_bottom = 0.88
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+scroll_active = false
+
+[node name="OptionsContainer" type="VBoxContainer" parent="CanvasLayer/UI" unique_id=772881337]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.3
+anchor_right = 0.75
+anchor_bottom = 0.7
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="RestartBtn" type="Button" parent="CanvasLayer/UI" unique_id=1890543279]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.45
+anchor_right = 0.6
+anchor_bottom = 0.55
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "Restart"
+
+[node name="PromptLabel" type="Label" parent="CanvasLayer/UI" unique_id=1737999378]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.05
+offset_left = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_font_sizes/font_size = 12
+
+[node name="CurrentLocation" type="Sprite2D" parent="." unique_id=1956707691]
+position = Vector2(400, 300)
+texture = ExtResource("2_0xm2m")
+
+[node name="CurrentCharacter" type="Sprite2D" parent="." unique_id=397497797]
+position = Vector2(393, 246)
+scale = Vector2(0.4932318, 0.4932318)
