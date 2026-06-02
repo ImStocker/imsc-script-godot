@@ -460,7 +460,11 @@ func _end_frame():
 func _handle_speech_node(node_id: String, node: Dictionary, inputs: Dictionary, options_inputs: Array):
 	var speech = ImscScriptSpeech.new(inputs)
 	if inputs.has("character") and inputs.character != null:
-		speech.character = ImscScriptProps.cast_asset_prop_value_to_string(inputs.character)
+		var asset = ImscScriptProps.cast_asset_prop_value_to_asset(inputs.character)
+		if asset != null:
+			speech.character = asset.get("Title", "")
+		else:
+			speech.character = ImscScriptProps.cast_asset_prop_value_to_string(inputs.character)
 	if inputs.has("text") and inputs.text != null:
 		speech.text = ImscScriptProps.cast_asset_prop_value_to_string(inputs.text)
 
