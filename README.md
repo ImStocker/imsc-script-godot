@@ -1,8 +1,8 @@
-# ImscScript Godot
+# Godot IMSC Dialogue/Script Player
 
-Lightweight Godot 4 addon to play dialogues and visual scripts using simple [JSON schema](./docs/graph-schema.md)
+A lightweight yet powerful JSON dialogue/script player that can be easily integrated into any stage of game development.
 
-You can use [**IMS Creators**](https://ims.cr5.space/) ([Desktop version](https://github.com/ImStocker/ims-creators)) to create ready-to-use dialogue graphs in a visual editor.
+You can create a JSON graph from scratch (following [JSON schema](./docs/graph-schema.md)) or use [**IMS Creators**](https://ims.cr5.space/) ([Desktop version](https://github.com/ImStocker/ims-creators)) to create ready-to-use dialogue graphs in a visual editor.
 
 Works with any Godot 4 project and provides full control over dialog flow, branching, variables, triggers, and serialization.
 
@@ -27,7 +27,7 @@ Copy the `addons/imsc_script` folder into your Godot project's `addons/` directo
 
 ### 1. Create a JSON graph from scratch or export script from IMS Creators
 
-A graph is a JSON object with a `start` node ID and a `nodes` dictionary. Each node has a `type` field and an ID of the next node (`next` field, or `options` if it has multiple output variants). Nodes can have input data in a `values` field, where each value can be a fixed value or a link to another node's output via `{ "get": "nodeId", "param": "outputName" }`. See the [JSON schema](./docs/graph-schema.md) for the full specification.
+A graph is a JSON object with a `start` node ID and a `nodes` dictionary. Each node has a `type` field and an ID of the next node (`next` field, or `options` if it has multiple output variants).
 
 Example of graph:
 
@@ -72,6 +72,8 @@ Example of graph:
   }
 }
 ```
+
+Nodes can have input data in a `values` field, where each value can be a fixed value or a link to another node's output via `{ "get": "nodeId", "param": "outputName" }`. See the [JSON schema](./docs/graph-schema.md) for the full specification.
 
 You can also export graphs as JSON from [IMS Creators](https://ims.cr5.space/) — use the `computed` content of a script block as the graph input.
 
